@@ -1,0 +1,53 @@
+1.	import java.util.Scanner;
+2.	public class ATM_Transaction
+3.	{
+4.	    public static void main(String args[] )
+5.	    { 
+6.	        int balance = 5000, withdraw, deposit;
+7.	        Scanner s = new Scanner(System.in);
+8.	        while(true)
+9.	        {
+10.	            System.out.println("Automated Teller Machine");
+11.	            System.out.println("Choose 1 for Withdraw");
+12.	            System.out.println("Choose 2 for Deposit");
+13.	            System.out.println("Choose 3 for Check Balance");
+14.	            System.out.println("Choose 4 for EXIT");
+15.	            System.out.print("Choose the operation you want to perform:");
+16.	            int n = s.nextInt();
+17.	            switch(n)
+18.	            {
+19.	                case 1:
+20.	                System.out.print("Enter money to be withdrawn:");
+21.	                withdraw = s.nextInt();
+22.	                if(balance >= withdraw)
+23.	                {
+24.	                    balance = balance - withdraw;
+25.	                    System.out.println("Please collect your money");
+26.	                }
+27.	                else
+28.	                {
+29.	                    System.out.println("Insufficient Balance");
+30.	                }
+31.	                System.out.println("");
+32.	                break;
+33.	 
+34.	                case 2:
+35.	                System.out.print("Enter money to be deposited:");
+36.	                deposit = s.nextInt();
+37.	                balance = balance + deposit;
+38.	                System.out.println("Your Money has been successfully depsited");
+39.	                System.out.println("");
+40.	                break;
+41.	 
+42.	                case 3:
+43.	                System.out.println("Balance : "+balance);
+44.	                System.out.println("");
+45.	                break;
+46.	 
+47.	                case 4:
+48.	                System.exit(0);
+49.	            }
+50.	        }
+51.	    }
+52.	}
+
